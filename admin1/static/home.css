@@ -1,0 +1,47 @@
+.bottom-left {
+  position: absolute;
+  bottom: 8px;
+  left: 16px;
+  color:white;
+}
+.container-fluid{
+  position: relative;
+  text-align: center;
+  font-family:Segoe Print;
+
+}
+.top-left {
+  position: absolute;
+  top: 8px;
+  left: 16px;
+  font-family:Segoe Print;
+  color:white;
+}
+.text{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-family:Segoe Print;
+  color:white;
+}
+.sp1{
+padding-height:20px;}
+.sp2{
+padding-width:3px;}
+.i2{
+height:200px;}
+.sp3{
+width:20px;}
+.footer-distributed{
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  background-color:#292c2f;
+  color: white;
+  text-align: center;
+}
+.sp4{padding-top:80px;}
+.img{color:white;}
+.img1{color:black;}

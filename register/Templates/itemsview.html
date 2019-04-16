@@ -1,0 +1,22 @@
+{% extends 'loggedin.html' %}
+{% block content %}
+<div class="container">
+    <table class="table">
+
+        <tr class="info">
+            <th>logo</th>
+            <th>name</th>
+            <th>price</th>
+            <th></th>
+        </tr>
+        {% for i in object_list %}
+        <tr>
+            <td><img src="{{i.logo.url}}" width="50px" height="50px" alt="error"></td>
+            <td>{{i.name}}</td>
+            <td>{{i.price}}</td>
+            <td><a href="{% url 'register:order' i.id %}">Order</a> </td>
+        </tr>
+        {% endfor %}
+    </table>
+</div>
+{% endblock %}

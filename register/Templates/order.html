@@ -1,0 +1,42 @@
+{% extends 'main.html' %}
+{% block content %}
+<script>
+function f1()
+{
+var v1=document.getElementById('i3').value
+var v2=document.getElementById('i1').value
+document.getElementById('i2').value=v1*v2
+}
+
+</script>
+<div class="container">
+    {% for i in object_list %}
+    <form method="post" action="{% url 'register:placeorder' i.id %}">
+        {% csrf_token %}
+        <table class="table">
+
+            <tr>
+                <td>{{i.name}}<br>
+                    <img src="{{i.logo.url}}" height="100px" width="100px">
+                    <br>
+                    <label>price:</label>
+                    <input name="price" type="text" value="{{i.price}}" id="i3" readonly>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <label>quantity</label>
+                    <input name="quantity" type="text" id="i1">
+                </td>
+                <td>
+                    <label>Total price:</label>
+                    <input type="text" name="total" onclick=f1() id="i2"><br>
+                     <input type="submit"  value="placeorder">
+                </td>
+            </tr>
+            {% endfor %}
+
+        </table>
+    </form>
+</div>
+{% endblock %}

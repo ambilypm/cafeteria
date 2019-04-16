@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+        <script src="https://code.jquery.com/jquery-3.3.1.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+<div class="page-header text-center">
+  <h1>ADMIN LOGIN </h1>
+
+</div>
+<div class="container">
+    <form method="POST" action="{% url 'admin1:log' %}">
+        {% csrf_token %}
+        <label class="control-label">Username:</label>
+        <input type="text" name="username" class="form-control"><br>
+        <label class="control-label">Password:</label>
+        <input type="password" name="password" class="form-control"><br>
+        <input type="submit" class="btn btn-info" value="SUBMIT">
+    </form>
+    {{message}}
+</div>
+</body>
+</html>

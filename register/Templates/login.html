@@ -1,0 +1,30 @@
+{% extends 'main.html' %}
+{% block content %}
+<div class="page-header text-center">
+  <h1>LOGIN FORM </h1>
+
+</div>
+<div class="container">
+    <form method="POST" action="{% url 'register:logincheck' %}">
+        {% csrf_token %}
+         <!--<form>-->
+    <!--<div class="input-group">-->
+      <!--<span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>-->
+      <!--<input type="text" class="form-control" name="USERNAME" placeholder="USERNAME">-->
+        <!--<br>-->
+    <!--</div>-->
+    <!--<div class="input-group">-->
+      <!--<span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span>-->
+      <!--<input id="password" type="password" class="form-control" name="password" placeholder="Password">-->
+        <!--<br>-->
+    <!--</div>-->
+         <!--</form>-->
+        <label class="control-label">Username:</label>
+        <input type="text" name="username" class="form-control"><br>
+        <label class="control-label">Password:</label>
+        <input type="password" name="password" class="form-control"><br>
+        <input type="submit" class="btn btn-info" value="SUBMIT">
+    <!--</form>-->
+    {{message}}
+</div>
+{% endblock %}

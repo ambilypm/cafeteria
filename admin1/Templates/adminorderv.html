@@ -1,0 +1,24 @@
+{% extends 'admin1.html' %}
+{% block content %}
+<div class="conatiner">
+    <table class="table">
+        <tr>
+            <th>Logo</th>
+            <th>Name</th>
+            <th>Total Price</th>
+            <th>Quantity</th>
+            <th>Date and Time of order</th>
+        </tr>
+        {% for i in object_list %}
+        <tr>{{i.logo.url}}
+            <td><img src="/logo/{{i.logo}}" width="100px" height="100px" alt="error"></td>
+            <td>{{i.name}}</td>
+            <td>{{i.price}}</td>
+            <td>{{i.quantity}}</td>
+            <td>{{i.date}}</td>
+            <td><a href="{% url 'admin1:cancel' i.id %}">Cancel</a></td>
+        </tr>
+        {% endfor %}
+    </table>
+</div>
+{% endblock %}

@@ -1,0 +1,22 @@
+{% extends 'admin1.html' %}
+{% block content %}
+<div class="container">
+    <table class="table">
+        {% for i in object_list %}
+        <tr class="info">
+            <th>logo</th>
+            <th>name</th>
+            <th>price</th>
+            <th>quantity</th>
+        </tr>
+        <tr>
+            <td>{{i.logo}}</td>
+            <td>{{i.name}}</td>
+            <td>{{i.price}}</td>
+            <td>{{i.quan}}</td>
+            <td><a href="{%url 'admin1:update' i.id %}">Edit</a> </td>
+        </tr>
+        {% endfor %}
+    </table>
+</div>
+{% endblock %}

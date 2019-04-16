@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>admin</title>
+<script src="https://code.jquery.com/jquery-3.3.1.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+</head>{% load static %}
+<body>
+<nav class="navbar navbar-default">
+    <div class="container-fluid">
+        <ul class="nav navbar-nav">
+
+            <li class="dropdown">
+                <button class="btn btn-primary dropdown-toggle" data-toggle="dropdown" type="button">Items
+                <span class="caret"></span></button>
+                <ul class="dropdown-menu">
+                    <li><a href="{% url 'admin1:add' %}">ADD ITEMS</a> </li>
+                    <li><a href="{% url 'admin1:view' %}">VIEW ITEMS</a> </li>
+                    <li><a href="{% url 'admin1:edit' %}">EDIT ITEMS</a></li>
+                    <li><a href="{% url 'admin1:delete' %}">DELETE ITEMS</a> </li>
+                </ul>
+            </li>
+
+            <div class="col-sm-4">
+            <li class="dropdown"><button type="button" class="btn btn-primary dropdown-toggle"
+                                         data-toggle="dropdown">  user<span class="caret"></span> </button>
+                    <ul class="dropdown-menu">
+                        <li><a href="{% url 'admin1:users' %}"> users</a></li>
+                    </ul>
+            </li></div>
+
+            <div class="col-sm-1">
+                <li class="dropdown"><button type="button" class="btn btn-primary dropdown-toggle"
+                data-toggle="dropdown">
+                    order<span class="caret"></span>
+                </button>
+                <ul class="dropdown-menu">
+                    <li><a href="{% url 'admin1:orders' %}">orders</a> </li>
+                </ul>
+                </li>
+            </div>
+
+        </ul >
+        <ul class="nav navbar-nav navbar-right">
+            <li><a href="{% url 'admin1:admin' 1 %}">LOGOUT</a></li>
+        </ul>
+    </div>
+</nav>
+<!--div class="col-sm-12 container-fluid">-->
+<!--<img class="img-responsive" src= "{% static 'slide2.jpg' %}"  height=100% class="img-rounded" alt="cafe" />-->
+<!--</div>-->
+{% block content %}
+<div class="col-sm-12 container-fluid">
+<img class="img-responsive" src= "{% static 'img3.jpg' %}"  height=100% class="img-rounded" alt="cafe" />
+</div>
+<div class="col-lg-12" style="padding: 0">
+
+</div>
+
+{% endblock %}
+</body>
+</html>

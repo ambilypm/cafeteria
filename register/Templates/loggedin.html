@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+        <script src="https://code.jquery.com/jquery-3.3.1.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+ <link href="/static/home.css" rel="stylesheet">
+{% load static %}
+</head>
+<body>
+
+
+<nav class="navbar navbar-inverse">
+    <div class="conatiner-fluid">
+        <ul class="nav navbar-nav">
+            <li><a href="{% url 'register:home' %}">HOME</a></li>
+            <li><a href="{% url 'register:about1' %}">ABOUT</a></li>
+            <li><a href="{% url 'register:itemview' %}">ITEMS</a></li>
+            <li><a href="{% url 'register:orders' %}">ORDERS</a> </li>
+        </ul>
+        <ul class="nav navbar-nav navbar-right">
+         <li><a href="{% url 'main' %}">LOGOUT</a> </li>
+        </ul>
+    </div>
+</nav>
+{% block content %}
+<div class="col-sm-12 container-fluid">
+<img class="img-responsive" src= "{% static 'img1.jpg' %}"  height=100% class="img-rounded" alt="cafe" />
+</div>
+<div class="col-lg-12" style="padding: 0">
+
+</div>
+<div class="col-sm-12 sp4"></div>
+
+<div id="myCarousel" class="carousel slide" data-ride="carousel">
+
+  <ol class="carousel-indicators">
+    <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+    <li data-target="#myCarousel" data-slide-to="1"></li>
+    <li data-target="#myCarousel" data-slide-to="2"></li>
+      <li data-target="#myCarousel" data-slide-to="3"></li>
+      <li data-target="#myCarousel" data-slide-to="4"></li>
+  </ol>
+
+  <!-- Wrapper for slides -->
+  <div class="carousel-inner">
+    <div class="item active">
+      <img src="{% static 'Banner50.jpg' %}" alt="bug"  style="width:100%;height:300px;" >
+        <div class="text">
+
+        </div>
+    </div>
+
+    <div class="item">
+      <img src="{% static 'Banner32.jpg' %}" alt="bug" style="width:100%;height:300px;">
+        <div class="text">
+
+        </div>
+    </div>
+
+    <div class="item">
+      <img src="{% static 'Banner45.jpg' %}" alt="cake" style="width:100%;height:300px;">
+        <div class="text">
+
+        </div>
+    </div>
+      <div class="item">
+      <img src="{% static 'Banner48.jpg' %}" alt="bug" style="width:100%;height:300px;">
+        <div class="text">
+
+        </div>
+    </div>
+      <div class="item">
+      <img src="{% static 'Banner51.jpg' %}" alt="bug" style="width:100%;height:300px;">
+        <div class="text">
+
+        </div>
+    </div>
+  </div>
+
+  <!-- Left and right controls -->
+  <a class="left carousel-control" href="#myCarousel" data-slide="prev">
+    <span class="glyphicon glyphicon-chevron-left"></span>
+    <span class="sr-only">Previous</span>
+  </a>
+  <a class="right carousel-control" href="#myCarousel" data-slide="next">
+    <span class="glyphicon glyphicon-chevron-right"></span>
+    <span class="sr-only">Next</span>
+  </a>
+</div>
+</div>
+
+
+
+
+<div class="col-sm-12 sp4"></div>
+{% endblock %}
+<footer class="footer-distributed">
+
+			<div class="footer-right">
+
+				<a href="#"><i class="fa fa-facebook"></i></a>
+				<a href="#"><i class="fa fa-twitter"></i></a>
+				<a href="#"><i class="fa fa-linkedin"></i></a>
+				<a href="#"><i class="fa fa-github"></i></a>
+
+			</div>
+
+			<div class="footer-left">
+
+				<p class="footer-links">
+					<a href="{% url 'main' %}">HOME</a>
+					·
+					<a href="{% url 'register:contact' %}">CONTACT US</a>
+					·
+					<!--<a href="{% url 'register:itemv' %}">ITEMS</a>-->
+				</p>
+
+				<p>McCafe&copy; 2018</p>
+			</div>
+
+		</footer>
+</div>
+</body>
+</html>

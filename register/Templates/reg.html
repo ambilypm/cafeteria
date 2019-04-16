@@ -1,0 +1,22 @@
+{% extends 'main.html' %}
+{% block content %}
+   <div class="page-header text-center">
+  <h1>REGISTER FORM </h1>
+
+</div>
+<div class="container">
+    <form method="POST" action="{% url 'register:regcheck' %}">
+        {% csrf_token %}
+
+        <label class="control-label">NAME:</label>
+        <input type="text" name="name" placeholder="NAME" class="form-control"><br>
+        <label class="control-label">Phone number:</label>
+        <input type="text" name="phonenumber" placeholder="PHONENUMBER" class="form-control"><br>
+        <label class="control-label">Username:</label>
+        <input type="text" name="username" placeholder="USERNAME" class="form-control"><br>
+        <label class="control-label">Password:</label>
+        <input type="password" name="password" placeholder="PASSWORD" class="form-control"><br>
+        <input type="submit" class="btn btn-info" value="SUBMIT">
+    </form>
+</div>
+{% endblock %}

@@ -1,0 +1,17 @@
+{% extends 'admin1.html' %}
+{% block content %}
+<div class="container">
+    <form class="form-inline" enctype="multipart/form-data" method="post" action="{% url 'admin1:change' %}">
+        {% csrf_token %}
+        {% for i in object_list %}
+        <label class="">logo:</label>
+        <input type="file" value="{{i.logo}}" class="form-control" name="logo"><br>
+        <label class="">item name:</label><input type="text" value="{{i.name}}" name="name" class="form-control"><br>
+        <label>quantity:</label><input value="{{i.quantity}}" type="text" name="quantity" class="form-control"><br>
+        <label class="">price:</label><input type="text" value="{{i.price}}" name="price" class="form-control"><br>
+        <input type="hidden" name="val" value="{{i.id}}">
+        <input class="btn btn-primary form-control" value="submit" type="submit">
+        {% endfor %}
+    </form>
+</div>
+{% endblock %}

@@ -1,0 +1,16 @@
+{% extends 'main.html' %}
+{% block content %}
+
+<div class="container-fluid">
+    <table class="table">
+        {% for i in object_list %}
+        <tr>
+            <td><img src="{{i.logo.url}}" width="70px" height="70px" alt="error"></td>
+            <td>{{i.name}}</td>
+            <td>RS:{{i.price}}/-</td>
+        </tr>
+        {% endfor %}
+    </table>
+</div>
+
+{% endblock %}
